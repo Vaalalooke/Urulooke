@@ -1,0 +1,130 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urulooke - Sueño reparador</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f4f8;
+        color: #333;
+        background-image: url("images/restful-sleep.jpg");
+        background-repeat: no-repeat;
+        background-color: #cccccc;
+        background-position: center;
+        background-size: cover;
+    }
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+    .sidebar {
+        width: 250px;
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        padding: 20px;
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+    h1 {
+        color: #2c3e50;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    h2 {
+        color: #34495e;
+        font-size: 1.8em;
+        margin-top: 0;
+    }
+    .menu {
+        list-style-type: none;
+        padding: 0;
+    }
+    .menu li {
+        margin-bottom: 10px;
+    }
+    .menu a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+    .menu a:hover {
+        color: #3498db;
+    }
+    .article {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .moon-svg {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2><a href="JovenYSaludable.html">Urulooke</a></h2>
+            <ul class="menu">
+                <li><a href="salud-financiera.html">Salud financiera</a></li>
+                <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
+                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
+                <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
+                <li><a href="salud-mental.html">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html">Salud integral</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Urulooke - Mantengámonos jóvenes y saludables</h1>
+            <h2>Sueño reparador</h2>
+            <svg class="moon-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="#f1c40f"/>
+                <circle cx="65" cy="35" r="40" fill="#2c3e50"/>
+            </svg>
+            <div class="article">
+                <p>El sueño reparador es fundamental para mantener una buena salud y bienestar general. Durante el sueño, nuestro cuerpo realiza importantes procesos de reparación y regeneración celular, consolidación de la memoria y regulación hormonal. Un descanso adecuado nos permite enfrentar el día con energía y vitalidad renovadas.</p>
+
+                <p>Para lograr un sueño reparador, es importante establecer una rutina de sueño consistente. Esto implica acostarse y levantarse a la misma hora todos los días, incluso los fines de semana. Crear un ambiente propicio para el descanso también es crucial: una habitación oscura, fresca y silenciosa favorece un sueño de calidad.</p>
+
+                <p>La higiene del sueño también incluye evitar el uso de dispositivos electrónicos antes de dormir, ya que la luz azul que emiten puede interferir con la producción de melatonina, la hormona del sueño. En su lugar, se recomienda realizar actividades relajantes como leer un libro, practicar meditación o escuchar música suave.</p>
+
+                <p>La alimentación y el ejercicio también juegan un papel importante en la calidad del sueño. Evitar comidas pesadas y estimulantes como la cafeína en las horas previas a dormir puede ayudar a conciliar el sueño más fácilmente. Por otro lado, el ejercicio regular mejora la calidad del sueño, aunque es preferible realizarlo durante el día y no justo antes de acostarse.</p>
+
+                <p>Recuerda que cada persona es diferente y puede necesitar ajustar estos consejos a su estilo de vida y necesidades particulares. Lo importante es encontrar una rutina que te permita despertar sintiéndote descansado y listo para enfrentar un nuevo día con energía y optimismo.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const moon = document.querySelector('.moon-svg');
+            let rotation = 0;
+            
+            function rotateMoon() {
+                rotation += 0.1;
+                moon.style.transform = `rotate(${rotation}deg)`;
+                requestAnimationFrame(rotateMoon);
+            }
+            
+            rotateMoon();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Urulooke - Mantengámonos jóvenes y saludables</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background: url('images/healthy-family-background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        text-align: center;
+        width: 90%;
+        max-width: 1200px;
+    }
+    h1 {
+        color: #2c3e50;
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+    h2 {
+        color: #34495e;
+        font-size: 1.5em;
+        margin-top: 0;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+        width: 90%;
+        max-width: 1200px;
+    }
+    .card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .card h3 {
+        padding: 15px;
+        margin: 0;
+        color: #2c3e50;
+        font-size: 1.2em;
+    }
+    @media (max-width: 1024px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.3em;
+        }
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>J&oacute;venes de cualquier edad</h1>
+        <h2>Mantengámonos jóvenes y saludables</h2>
+    </div>
+    <div class="grid">
+        <div class="card" data-page="salud-financiera">
+            <img src="images/financial-health.jpg" alt="Persona sonriente revisando finanzas en una tableta" width="400" height="200">
+            <h3>Salud financiera</h3>
+        </div>
+        <div class="card" data-page="alimentacion-saludable">
+            <img src="images/healthy-food.jpg" alt="Plato colorido con frutas y verduras frescas" width="400" height="200">
+            <h3>Alimentación saludable</h3>
+        </div>
+        <div class="card" data-page="limpieza-del-aire">
+            <img src="images/clean-air.jpg" alt="Persona respirando aire fresco en un bosque" width="400" height="200">
+            <h3>Limpieza del aire</h3>
+        </div>
+        <div class="card" data-page="sueno-reparador">
+            <img src="images/restful-sleep.jpg" alt="Persona durmiendo plácidamente en una cama cómoda" width="400" height="200">
+            <h3>Sueño reparador</h3>
+        </div>
+        <div class="card" data-page="agua-saludable">
+            <img src="images/healthy-water.jpg" alt="Vaso de agua cristalina con rodaja de limón" width="400" height="200">
+            <h3>Agua deliciosa y saludable</h3>
+        </div>
+        <div class="card" data-page="reduccion-estres">
+            <img src="images/stress-reduction.jpg" alt="Persona meditando en posición de loto" width="400" height="200">
+            <h3>Reducción del estrés</h3>
+        </div>
+        <div class="card" data-page="salud-mental">
+            <img src="images/mental-health.jpg" alt="Persona sonriente haciendo un gesto de corazón con las manos" width="400" height="200">
+            <h3>Salud mental</h3>
+        </div>
+        <div class="card" data-page="socialmente-saludable">
+            <img src="images/social-health.jpg" alt="Grupo de amigos riendo y disfrutando juntos" width="400" height="200">
+            <h3>Socialmente saludable</h3>
+        </div>
+        <div class="card" data-page="salud-integral">
+            <img src="images/holistic-health.jpg" alt="Persona en pose de yoga rodeada de símbolos de bienestar" width="400" height="200">
+            <h3>Salud integral</h3>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const page = card.getAttribute('data-page');
+            window.location.href = `${page}.html`;
+        });
+    });
+});
+</script>
+</body></html>

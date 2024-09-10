@@ -1,0 +1,196 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Urulooke - Salud Integral</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Arial', sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        background-image: url("images/holistic-health.jpg");
+        background-repeat: no-repeat;
+        background-color: #cccccc;
+        background-position: center;
+        background-size: cover;
+    }
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+    .sidebar {
+        width: 250px;
+        background-color: #4682b4;
+        color: #fff;
+        padding: 20px;
+    }
+    .content {
+        flex: 1;
+        padding: 20px;
+    }
+    h1 {
+        color: #4682b4;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    h2 {
+        color: #1e90ff;
+        font-size: 1.8em;
+        margin-top: 0;
+    }
+    .menu {
+        list-style-type: none;
+        padding: 0;
+    }
+    .menu li {
+        margin-bottom: 10px;
+    }
+    .menu a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1em;
+        transition: color 0.3s ease;
+    }
+    .menu a:hover {
+        color: #87cefa;
+    }
+    .article {
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .health-wheel {
+        width: 300px;
+        height: 300px;
+        margin: 20px auto;
+        position: relative;
+    }
+    .health-segment {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(50% 50%, 100% 0%, 100% 33%);
+        transition: transform 0.3s ease;
+    }
+    .health-segment:hover {
+        transform: scale(1.1);
+    }
+    .segment-label {
+        position: absolute;
+        font-size: 12px;
+        text-align: center;
+        width: 80px;
+        top: 20px;
+        left: 50%;
+        transform-origin: 0 0;
+    }
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+        .sidebar {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2><a href="JovenYSaludable.html">Urulooke</a></h2>
+            <ul class="menu">
+                <li><a href="salud-financiera.html">Salud financiera</a></li>
+                <li><a href="alimentacion-saludable.html">Alimentaci&oacute;n saludable</a></li>
+                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
+                <li><a href="reduccion-estres.html">Reducci&oacute;n del estr&eacute;s</a></li>
+                <li><a href="salud-mental.html">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html">Salud integral</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Urulooke - Manteng&aacute;monos j&oacute;venes y saludables</h1>
+            <h2>Salud Integral</h2>
+            <div class="health-wheel" id="healthWheel"></div>
+            <div class="article">
+                <p>En Urulooke, creemos firmemente en el enfoque de la salud integral. Esta perspectiva hol&iacute;stica reconoce que nuestra salud y bienestar general son el resultado de la interacci&oacute;n armoniosa de m&uacute;ltiples aspectos de nuestra vida. La salud integral no se trata solo de la ausencia de enfermedades, sino de lograr un estado de bienestar completo en todas las dimensiones de nuestra existencia.</p>
+
+                <p>Nuestro modelo de salud integral abarca nueve &aacute;reas fundamentales, cada una de las cuales juega un papel crucial en nuestro bienestar general:</p>
+
+                <ol>
+                    <li><strong>Salud Financiera:</strong> La estabilidad y el bienestar financiero son fundamentales para reducir el estr&eacute;s y mejorar la calidad de vida.</li>
+                    <li><strong>Alimentaci&oacute;n Saludable:</strong> Una dieta equilibrada y nutritiva es la base de una buena salud f&iacute;sica y mental.</li>
+                    <li><strong>Limpieza del Aire:</strong> Respirar aire limpio es esencial para nuestra salud respiratoria y general.</li>
+                    <li><strong>Sueño Reparador:</strong> Un descanso adecuado es crucial para la recuperaci&oacute;n f&iacute;sica y mental.</li>
+                    <li><strong>Agua Deliciosa y Saludable:</strong> La hidrataci&oacute;n adecuada con agua de calidad es vital para todas las funciones corporales.</li>
+                    <li><strong>Reducci&oacute;n del Estr&eacute;s:</strong> Manejar el estr&eacute;s es clave para mantener el equilibrio y prevenir enfermedades.</li>
+                    <li><strong>Salud Mental:</strong> El bienestar emocional y psicol&oacute;gico es tan importante como la salud f&iacute;sica.</li>
+                    <li><strong>Socialmente Saludable:</strong> Las conexiones sociales positivas contribuyen significativamente a nuestro bienestar general.</li>
+                    <li><strong>Salud F&iacute;sica:</strong> El cuidado de nuestro cuerpo a trav&eacute;s del ejercicio y chequeos regulares es fundamental.</li>
+                </ol>
+
+                <p>Estos nueve aspectos est&aacute;n interconectados y se influyen mutuamente. Por ejemplo, una buena salud financiera puede reducir el estr&eacute;s, lo que a su vez puede mejorar la calidad del sueño. Una alimentaci&oacute;n saludable y el consumo de agua de calidad pueden mejorar tanto la salud f&iacute;sica como la mental. Las conexiones sociales positivas pueden proporcionar apoyo emocional y motivaci&oacute;n para mantener h&aacute;bitos saludables.</p>
+
+                <p>En Urulooke, te invitamos a explorar cada una de estas &aacute;reas y a trabajar en su mejora de manera equilibrada. Recuerda que el progreso en una &aacute;rea a menudo conduce a mejoras en otras. Nuestro objetivo es ayudarte a lograr un estado de bienestar integral donde todos estos aspectos est&eacute;n en armon&iacute;a.</p>
+
+                <p>Para comenzar tu viaje hacia una salud integral, te sugerimos:</p>
+
+                <ul>
+                    <li>Eval&uacute;a tu situaci&oacute;n actual en cada una de las nueve &aacute;reas.</li>
+                    <li>Identifica las &aacute;reas que necesitan m&aacute;s atenci&oacute;n.</li>
+                    <li>Establece metas realistas y alcanzables para cada &aacute;rea.</li>
+                    <li>Implementa cambios graduales y sostenibles en tu estilo de vida.</li>
+                    <li>Busca apoyo y recursos en cada &aacute;rea cuando lo necesites.</li>
+                    <li>Celebra tus progresos, por pequeños que sean.</li>
+                    <li>Recuerda que la salud integral es un viaje continuo, no un destino final.</li>
+                </ul>
+
+                <p>En Urulooke, estamos comprometidos a proporcionarte la informaci&oacute;n, las herramientas y el apoyo que necesitas para lograr y mantener una salud integral. Explora nuestras secciones dedicadas a cada &aacute;rea para obtener consejos pr&aacute;cticos, estrategias efectivas y recursos valiosos.</p>
+
+                <p>Recuerda, cada pequeño paso que das hacia una vida m&aacute;s saludable en cualquiera de estas &aacute;reas te acerca a un estado de bienestar integral. ¡Comienza tu viaje hacia una vida m&aacute;s plena y equilibrada hoy mismo!</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const healthWheel = document.getElementById('healthWheel');
+        const segments = [
+            { color: '#FF6B6B', label: 'Salud Financiera' },
+            { color: '#4ECDC4', label: 'Alimentación Saludable' },
+            { color: '#45B7D1', label: 'Limpieza del Aire' },
+            { color: '#45B7E9', label: 'Sueño Reparador' },
+            { color: '#1A936F', label: 'Agua Saludable' },
+            { color: '#F9C80E', label: 'Reducción del Estrés' },
+            { color: '#D02E9B', label: 'Salud Mental' },
+            { color: '#FF9F1C', label: 'Socialmente Saludable' },
+            { color: '#2EC4B6', label: 'Salud Física' }
+        ];
+
+        segments.forEach((segment, index) => {
+            const segmentEl = document.createElement('div');
+            segmentEl.className = 'health-segment';
+            segmentEl.style.backgroundColor = segment.color;
+            segmentEl.style.transform = `rotate(${index * 40}deg)`;
+
+            const labelEl = document.createElement('div');
+            labelEl.className = 'segment-label';
+            labelEl.textContent = segment.label;
+            labelEl.style.transform = `rotate(40deg) translateX(90px) rotate(-40deg)`;
+
+            segmentEl.appendChild(labelEl);
+            healthWheel.appendChild(segmentEl);
+
+            segmentEl.addEventListener('mouseover', () => {
+                labelEl.style.fontWeight = 'bold';
+            });
+
+            segmentEl.addEventListener('mouseout', () => {
+                labelEl.style.fontWeight = 'normal';
+            });
+        });
+    </script>
+</body>
+</html>
