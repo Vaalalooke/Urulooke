@@ -22,16 +22,62 @@
         display: flex;
         min-height: 100vh;
     }
+
     .sidebar {
         width: 250px;
         background-color: #4682b4;
         color: #fff;
         padding: 20px;
+        transition: transform 0.3s ease;
     }
+
     .content {
         flex: 1;
         padding: 20px;
     }
+
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        font-size: 30px;
+        cursor: pointer;
+        background-color: #4682b4;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        z-index: 1001;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100%;
+            transform: translateX(-100%);
+            z-index: 1000;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+
+        .content {
+            margin-left: 0;
+            padding-top: 60px;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+
     h1 {
         color: #4682b4;
         font-size: 2.5em;
@@ -123,6 +169,7 @@
     }
 </style></head><body>
     <div class="container">
+        <div class="menu-toggle">☰</div>
         <div class="sidebar">
             <h2><a href="index.html">Home</a></h2>
             <ul class="menu">
@@ -198,41 +245,27 @@ es posible vivir una vida más plena y en armonía. ¡Empieza hoy!<br>
 </div>
         </div>
     </div>
-    <!--script>
-        const healthWheel = document.getElementById('healthWheel');
-        const segments = [
-            { color: '#FF6B6B', label: 'Salud Financiera' },
-            { color: '#4ECDC4', label: 'Alimentación Saludable' },
-            { color: '#45B7D1', label: 'Limpieza del Aire' },
-            { color: '#45B7E9', label: 'Sueño Reparador' },
-            { color: '#1A936F', label: 'Agua Saludable' },
-            { color: '#F9C80E', label: 'Reducción del Estrés' },
-            { color: '#D02E9B', label: 'Salud Mental' },
-            { color: '#FF9F1C', label: 'Socialmente Saludable' },
-            { color: '#2EC4B6', label: 'Salud Física' }
-        ];
-
-        segments.forEach((segment, index) => {
-            const segmentEl = document.createElement('div');
-            segmentEl.className = 'health-segment';
-            segmentEl.style.backgroundColor = segment.color;
-            segmentEl.style.transform = `rotate(${index * 40}deg)`;
-
-            const labelEl = document.createElement('div');
-            labelEl.className = 'segment-label';
-            labelEl.textContent = segment.label;
-            labelEl.style.transform = `rotate(40deg) translateX(60px) rotate(-40deg)`; // Changed from 90px to 60px
-
-            segmentEl.appendChild(labelEl);
-            healthWheel.appendChild(segmentEl);
-
-            segmentEl.addEventListener('mouseover', () => {
-                labelEl.style.fontWeight = 'bold';
-            });
-
-            segmentEl.addEventListener('mouseout', () => {
-                labelEl.style.fontWeight = 'normal';
-            });
-        });
-    </script-->
 </body></html>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
+
+    menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside on mobile
+    document.addEventListener('click', function(event) {
+        if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('active');
+        }
+    });
+});
