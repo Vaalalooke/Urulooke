@@ -63,6 +63,7 @@
         border-radius: 8px;
         padding: 20px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden; /* Added to contain the floated wheel */
     }
     .health-wheel {
         width: 300px;
@@ -82,14 +83,21 @@
     }
     .segment-label {
         position: absolute;
-        font-size: 12px;
+        font-size: 10px;
         text-align: center;
-        width: 80px;
-        top: 20px;
+        width: 60px;
+        top: 15px;
         left: 50%;
         transform-origin: 0 0;
     }
-    @media (max-width: 768px) {
+    .health-wheel {
+        width: 200px;
+        height: 200px;
+        margin: 20px 0 20px auto;
+        position: relative;
+        float: right;
+        clear: right;
+    }    @media (max-width: 768px) {
         .container {
             flex-direction: column;
         }
@@ -190,7 +198,7 @@ es posible vivir una vida más plena y en armonía. ¡Empieza hoy!<br>
 </div>
         </div>
     </div>
-    <script>
+    <!--script>
         const healthWheel = document.getElementById('healthWheel');
         const segments = [
             { color: '#FF6B6B', label: 'Salud Financiera' },
@@ -213,7 +221,7 @@ es posible vivir una vida más plena y en armonía. ¡Empieza hoy!<br>
             const labelEl = document.createElement('div');
             labelEl.className = 'segment-label';
             labelEl.textContent = segment.label;
-            labelEl.style.transform = `rotate(40deg) translateX(90px) rotate(-40deg)`;
+            labelEl.style.transform = `rotate(40deg) translateX(60px) rotate(-40deg)`; // Changed from 90px to 60px
 
             segmentEl.appendChild(labelEl);
             healthWheel.appendChild(segmentEl);
@@ -226,5 +234,5 @@ es posible vivir una vida más plena y en armonía. ¡Empieza hoy!<br>
                 labelEl.style.fontWeight = 'normal';
             });
         });
-    </script>
+    </script-->
 </body></html>
