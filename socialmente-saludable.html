@@ -1,7 +1,8 @@
 <html><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urulooke - Socialmente Saludable</title>
+<link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
+<title>Socialmente Saludable</title>
 <style>
     body, html {
         margin: 0;
@@ -105,12 +106,28 @@
             width: 100%;
         }
     }
+    .glow {
+        font-size: 48px;
+        color: #ffffff;
+        text-align: center;
+        -webkit-animation: glow 1s ease-in-out infinite alternate;
+        -moz-animation: glow 1s ease-in-out infinite alternate;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+    @-webkit-keyframes glow {
+        from {
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
+        }
+        to {
+            text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
+        }
+    }
 </style>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2><a href="JovenYSaludable.html">Urulooke</a></h2>
+            <h2><a href="index.html">Home</a></h2>
             <ul class="menu">
                 <li><a href="salud-financiera.html">Salud financiera</a></li>
                 <li><a href="alimentacion-saludable.html">Alimentaci&oacute;n saludable</a></li>
@@ -124,7 +141,7 @@
             </ul>
         </div>
         <div class="content">
-            <h1>Urulooke - Manteng&aacute;monos j&oacute;venes y saludables</h1>
+            <h1 class="glow">Manteng&aacute;monos j&oacute;venes y saludables</h1>
             <h2>Socialmente Saludable</h2>
             <div class="social-network" id="socialNetwork"></div>
             <button class="interact-button">Interactuar</button>
