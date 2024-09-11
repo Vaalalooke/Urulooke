@@ -1,141 +1,201 @@
-<html><head><base href="agua-saludable">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-<title>Agua deliciosa y saludable</title>
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #e6f3ff;
-        color: #333;
-        background-image: url("images/healthy-water.jpg");
-        background-repeat: no-repeat;
-        background-color: #cccccc;
-        background-position: center;
-        background-size: cover;
-    }
-    .container {
-        display: flex;
-        min-height: 100vh;
-    }
-    .sidebar {
-        width: 250px;
-        background-color: #0077be;
-        color: #fff;
-        padding: 20px;
-    }
-    .content {
-        flex: 1;
-        padding: 20px;
-    }
-    h1 {
-        color: #0077be;
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
-    h2 {
-        color: #00a8e8;
-        font-size: 1.8em;
-        margin-top: 0;
-    }
-    .menu {
-        list-style-type: none;
-        padding: 0;
-    }
-    .menu li {
-        margin-bottom: 10px;
-    }
-    .menu a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.1em;
-        transition: color 0.3s ease;
-    }
-    .menu a:hover {
-        color: #7fdbff;
-    }
-    .glow {
-        font-size: 48px;
-        color: #ffffff;
-        text-align: center;
-        -webkit-animation: glow 1s ease-in-out infinite alternate;
-        -moz-animation: glow 1s ease-in-out infinite alternate;
-        animation: glow 1s ease-in-out infinite alternate;
-    }
-    @-webkit-keyframes glow {
-        from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
-        }
-        to {
-            text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
-        }
-    }
-    .article {
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .water-animation {
-        width: 200px;
-        height: 200px;
-        margin: 20px auto;
-        position: relative;
-        overflow: hidden;
-        border-radius: 50%;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .water-wave {
-        width: 200%;
-        height: 200%;
-        position: absolute;
-        top: -75%;
-        left: -50%;
-        border-radius: 40%;
-        background: rgba(0,168,232,0.7);
-        animation: wave 5s infinite linear;
-    }
-    @keyframes wave {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-    .water-drop {
-        position: absolute;
-        background-color: #0077be;
-        border-radius: 50%;
-        animation: drop 2s infinite;
-    }
-    @keyframes drop {
-        0% {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateY(100%);
-            opacity: 0;
-        }
-    }
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
-        .sidebar {
-            width: 100%;
-        }
-    }
-</style>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <base href="agua-saludable">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+        <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
+        <title>Agua deliciosa y saludable</title>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                background-color: #e6f3ff;
+                color: #333;
+                background-image: url("images/healthy-water.jpg");
+                background-repeat: no-repeat;
+                background-color: #cccccc;
+                background-position: center;
+                background-size: cover;
+            }
+            .container {
+                display: flex;
+                min-height: 100vh;
+            }
+            .sidebar {
+                width: 250px;
+                background-color: #0077be;
+                color: #fff;
+                padding: 20px;
+            }
+            .sidebar h2 {
+                color: #3498db;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .sidebar li {
+                margin-bottom: 10px;
+            }
+            .sidebar a {
+                color: #ecf0f1;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .sidebar a:hover {
+                color: #3498db;
+            }
+            .menu-toggle {
+                display: none;
+                position: fixed;
+                left: 10px;
+                top: 10px;
+                font-size: 30px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                z-index: 1001;
+            }
+
+            .content {
+                flex: 1;
+                padding: 20px;
+            }
+            h1 {
+                color: #0077be;
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+            h2 {
+                color: #00a8e8;
+                font-size: 1.8em;
+                margin-top: 0;
+            }
+            .menu {
+                list-style-type: none;
+                padding: 0;
+            }
+            .menu li {
+                margin-bottom: 10px;
+            }
+            .menu a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1em;
+                transition: color 0.3s ease;
+            }
+            .menu a:hover {
+                color: #7fdbff;
+            }
+            .glow {
+                font-size: 48px;
+                color: #ffffff;
+                text-align: center;
+                -webkit-animation: glow 1s ease-in-out infinite alternate;
+                -moz-animation: glow 1s ease-in-out infinite alternate;
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+            @-webkit-keyframes glow {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
+                }
+                to {
+                    text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
+                }
+            }
+            .article {
+                background-color: #fff;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .water-animation {
+                width: 200px;
+                height: 200px;
+                margin: 20px auto;
+                position: relative;
+                overflow: hidden;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .water-wave {
+                width: 200%;
+                height: 200%;
+                position: absolute;
+                top: -75%;
+                left: -50%;
+                border-radius: 40%;
+                background: rgba(0,168,232,0.7);
+                animation: wave 5s infinite linear;
+            }
+            @keyframes wave {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            .water-drop {
+                position: absolute;
+                background-color: #0077be;
+                border-radius: 50%;
+                animation: drop 2s infinite;
+            }
+            @keyframes drop {
+                0% {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100%);
+                    opacity: 0;
+                }
+            }
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                }
+                .sidebar {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    transform: translateX(-100%);
+                    z-index: 1000;
+                    padding-top: 80px; /* Increased padding at the top */
+                }
+
+                .sidebar.active {
+                    transform: translateX(0);
+                }
+
+                .content {
+                    margin-left: 0;
+                    padding-top: 60px;
+                }
+
+                .menu-toggle {
+                    display: block;
+                }
+            }
+        </style>
 </head>
 <body>
     <div class="container">
+        <div class="menu-toggle">☰</div>
         <div class="sidebar">
             <h2><a href="index.html">Home</a></h2>
             <ul class="menu">
@@ -199,6 +259,28 @@
             }
             
             setInterval(createWaterDrop, 200);
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>

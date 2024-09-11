@@ -1,140 +1,234 @@
 <html>
     <head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
         <title>Mantengámonos jóvenes y saludables</title>
         <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        background: url('images/healthy-family-background.jpg') no-repeat center center fixed;
-        background-size: cover;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .container {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 20px;
-        border-radius: 10px;
-        margin: 20px;
-        text-align: center;
-        width: 90%;
-        max-width: 1200px;
-    }
-    h1 {
-        color: #2c3e50;
-        font-size: 3em;
-        margin-bottom: 10px;
-    }
-    h2 {
-        color: #34495e;
-        font-size: 1.5em;
-        margin-top: 0;
-    }
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 20px;
-        width: 90%;
-        max-width: 1200px;
-    }
-    .card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    }
-    .card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    .card h3 {
-        padding: 15px;
-        margin: 0;
-        color: #2c3e50;
-        font-size: 1.2em;
-    }
-    @media (max-width: 1024px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2.5em;
-        }
-        h2 {
-            font-size: 1.3em;
-        }
-        .grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>
-</head>
-<body>
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                background: url('images/healthy-family-background.jpg') no-repeat center center fixed;
+                background-size: cover;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .container {
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px;
+                text-align: center;
+                width: 90%;
+                max-width: 1200px;
+            }
+            .sidebar {
+                width: 250px;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 20px;
+            }
+            .sidebar h2 {
+                color: #3498db;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .sidebar li {
+                margin-bottom: 10px;
+            }
+            .sidebar a {
+                color: #ecf0f1;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .sidebar a:hover {
+                color: #3498db;
+            }
+            .menu-toggle {
+                display: none;
+                position: fixed;
+                left: 10px;
+                top: 10px;
+                font-size: 30px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                z-index: 1001;
+            }
+
+            h1 {
+                color: #2c3e50;
+                font-size: 3em;
+                margin-bottom: 10px;
+            }
+            h2 {
+                color: #34495e;
+                font-size: 1.5em;
+                margin-top: 0;
+            }
+            .menu {
+                list-style-type: none;
+                padding: 0;
+            }
+            .menu li {
+                margin-bottom: 10px;
+            }
+            .menu a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1em;
+                transition: color 0.3s ease;
+            }
+            .menu a:hover {
+                color: #87cefa;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                padding: 20px;
+                width: 90%;
+                max-width: 1200px;
+            }
+            .card {
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+            }
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            .card h3 {
+                padding: 15px;
+                margin: 0;
+                color: #2c3e50;
+                font-size: 1.2em;
+            }
+            @media (max-width: 1024px) {
+                .grid {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                .sidebar {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    transform: translateX(-100%);
+                    z-index: 1000;
+                    padding-top: 80px; /* Increased padding at the top */
+                }
+
+                .sidebar.active {
+                    transform: translateX(0);
+                }
+
+                .menu-toggle {
+                    display: block;
+                }
+            }
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: 2.5em;
+                }
+                h2 {
+                    font-size: 1.3em;
+                }
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .glow {
+                font-size: 48px;
+                color: #ffffff;
+                text-align: center;
+                -webkit-animation: glow 1s ease-in-out infinite alternate;
+                -moz-animation: glow 1s ease-in-out infinite alternate;
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+            @-webkit-keyframes glow {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
+                }
+                to {
+                    text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
+                }
+            }
+        </style>
+    </head>
+    <body>
     <div class="container">
-        <h1>J&oacute;venes de cualquier edad</h1>
-        <h2>Mantengámonos jóvenes y saludables</h2>
-    </div>
-    <div class="grid">
-        <div class="card" data-page="salud-financiera">
-            <img src="images/financial-health.jpg" alt="Persona sonriente revisando finanzas en una tableta" width="400" height="200">
-            <h3>Salud financiera</h3>
+                <h1 class="glow">J&oacute;venes de cualquier edad</h1>
+            <h2>Mantengámonos jóvenes y saludables</h2>
         </div>
-        <div class="card" data-page="alimentacion-saludable">
-            <img src="images/healthy-food.jpg" alt="Plato colorido con frutas y verduras frescas" width="400" height="200">
-            <h3>Alimentación saludable</h3>
+        <div class="grid">
+            <div class="card" data-page="salud-financiera">
+                <img src="images/financial-health.jpg" alt="Persona sonriente revisando finanzas en una tableta" width="400" height="200">
+                <h3>Salud financiera</h3>
+            </div>
+            <div class="card" data-page="alimentacion-saludable">
+                <img src="images/healthy-food.jpg" alt="Plato colorido con frutas y verduras frescas" width="400" height="200">
+                <h3>Alimentación saludable</h3>
+            </div>
+            <div class="card" data-page="limpieza-del-aire">
+                <img src="images/clean-air.jpg" alt="Persona respirando aire fresco en un bosque" width="400" height="200">
+                <h3>Limpieza del aire</h3>
+            </div>
+            <div class="card" data-page="sueno-reparador">
+                <img src="images/restful-sleep.jpg" alt="Persona durmiendo plácidamente en una cama cómoda" width="400" height="200">
+                <h3>Sueño reparador</h3>
+            </div>
+            <div class="card" data-page="agua-saludable">
+                <img src="images/healthy-water.jpg" alt="Vaso de agua cristalina con rodaja de limón" width="400" height="200">
+                <h3>Agua deliciosa y saludable</h3>
+            </div>
+            <div class="card" data-page="reduccion-estres">
+                <img src="images/stress-reduction.jpg" alt="Persona meditando en posición de loto" width="400" height="200">
+                <h3>Reducción del estrés</h3>
+            </div>
+            <div class="card" data-page="salud-mental">
+                <img src="images/mental-health.jpg" alt="Persona sonriente haciendo un gesto de corazón con las manos" width="400" height="200">
+                <h3>Salud mental</h3>
+            </div>
+            <div class="card" data-page="socialmente-saludable">
+                <img src="images/social-health.jpg" alt="Grupo de amigos riendo y disfrutando juntos" width="400" height="200">
+                <h3>Socialmente saludable</h3>
+            </div>
+            <div class="card" data-page="salud-integral">
+                <img src="images/holistic-health.jpg" alt="Persona en pose de yoga rodeada de símbolos de bienestar" width="400" height="200">
+                <h3>Salud integral</h3>
+            </div>
         </div>
-        <div class="card" data-page="limpieza-del-aire">
-            <img src="images/clean-air.jpg" alt="Persona respirando aire fresco en un bosque" width="400" height="200">
-            <h3>Limpieza del aire</h3>
-        </div>
-        <div class="card" data-page="sueno-reparador">
-            <img src="images/restful-sleep.jpg" alt="Persona durmiendo plácidamente en una cama cómoda" width="400" height="200">
-            <h3>Sueño reparador</h3>
-        </div>
-        <div class="card" data-page="agua-saludable">
-            <img src="images/healthy-water.jpg" alt="Vaso de agua cristalina con rodaja de limón" width="400" height="200">
-            <h3>Agua deliciosa y saludable</h3>
-        </div>
-        <div class="card" data-page="reduccion-estres">
-            <img src="images/stress-reduction.jpg" alt="Persona meditando en posición de loto" width="400" height="200">
-            <h3>Reducción del estrés</h3>
-        </div>
-        <div class="card" data-page="salud-mental">
-            <img src="images/mental-health.jpg" alt="Persona sonriente haciendo un gesto de corazón con las manos" width="400" height="200">
-            <h3>Salud mental</h3>
-        </div>
-        <div class="card" data-page="socialmente-saludable">
-            <img src="images/social-health.jpg" alt="Grupo de amigos riendo y disfrutando juntos" width="400" height="200">
-            <h3>Socialmente saludable</h3>
-        </div>
-        <div class="card" data-page="salud-integral">
-            <img src="images/holistic-health.jpg" alt="Persona en pose de yoga rodeada de símbolos de bienestar" width="400" height="200">
-            <h3>Salud integral</h3>
-        </div>
-    </div>
-<script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const page = card.getAttribute('data-page');
-            window.location.href = `${page}.html`;
+        <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const page = card.getAttribute('data-page');
+                    window.location.href = `${page}.html`;
+                });
+            });
         });
-    });
-});
-</script>
-</body></html>
+        </script>
+    </body>
+</html>

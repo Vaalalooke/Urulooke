@@ -1,173 +1,200 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-<title>Salud Integral</title>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
+        <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
+        <title>Salud Integral</title>
 
-<style>
-    body, html {
-        margin: 0;
-        padding: 0;
-        font-family: 'Arial', sans-serif;
-        background-color: #f0f8ff;
-        color: #333;
-        background-image: url("images/holistic-health.jpg");
-        background-repeat: no-repeat;
-        background-color: #cccccc;
-        background-position: center;
-        background-size: cover;
-    }
-    .container {
-        display: flex;
-        min-height: 100vh;
-    }
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                background-color: #f0f8ff;
+                color: #333;
+                background-image: url("images/holistic-health.jpg");
+                background-repeat: no-repeat;
+                background-color: #cccccc;
+                background-position: center;
+                background-size: cover;
+            }
+            .container {
+                display: flex;
+                min-height: 100vh;
+            }
 
-    .sidebar {
-        width: 250px;
-        background-color: #4682b4;
-        color: #fff;
-        padding: 20px;
-        transition: transform 0.3s ease;
-    }
+            .sidebar {
+                width: 250px;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 20px;
+                transition: transform 0.3s ease;
+            }
 
-    .content {
-        flex: 1;
-        padding: 20px;
-    }
+            .sidebar h2 {
+                color: #3498db;
+                border-bottom: 2px solid #3498db;
+                padding-bottom: 10px;
+            }
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .sidebar li {
+                margin-bottom: 10px;
+            }
+            .sidebar a {
+                color: #ecf0f1;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            .sidebar a:hover {
+                color: #3498db;
+            }
+            .content {
+                flex: 1;
+                padding: 20px;
+            }
 
-    .menu-toggle {
-        display: none;
-        position: fixed;
-        left: 10px;
-        top: 10px;
-        font-size: 30px;
-        cursor: pointer;
-        background-color: #4682b4;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 5px;
-        z-index: 1001;
-    }
+            .menu-toggle {
+                display: none;
+                position: fixed;
+                left: 10px;
+                top: 10px;
+                font-size: 30px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                z-index: 1001;
+            }
 
-    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                }
 
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100%;
-            transform: translateX(-100%);
-            z-index: 1000;
-        }
+                .sidebar {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    transform: translateX(-100%);
+                    z-index: 1000;
+                    padding-top: 80px; /* Increased padding at the top */
+                }
 
-        .sidebar.active {
-            transform: translateX(0);
-        }
+                .sidebar.active {
+                    transform: translateX(0);
+                }
 
-        .content {
-            margin-left: 0;
-            padding-top: 60px;
-        }
+                .content {
+                    margin-left: 0;
+                    padding-top: 60px;
+                }
 
-        .menu-toggle {
-            display: block;
-        }
-    }
+                .menu-toggle {
+                    display: block;
+                }
+            }
 
-    h1 {
-        color: #4682b4;
-        font-size: 2.5em;
-        margin-bottom: 20px;
-    }
-    h2 {
-        color: #1e90ff;
-        font-size: 1.8em;
-        margin-top: 0;
-    }
-    .menu {
-        list-style-type: none;
-        padding: 0;
-    }
-    .menu li {
-        margin-bottom: 10px;
-    }
-    .menu a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.1em;
-        transition: color 0.3s ease;
-    }
-    .menu a:hover {
-        color: #87cefa;
-    }
-    .article {
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        overflow: hidden; /* Added to contain the floated wheel */
-    }
-    .health-wheel {
-        width: 300px;
-        height: 300px;
-        margin: 20px auto;
-        position: relative;
-    }
-    .health-segment {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        clip-path: polygon(50% 50%, 100% 0%, 100% 33%);
-        transition: transform 0.3s ease;
-    }
-    .health-segment:hover {
-        transform: scale(1.1);
-    }
-    .segment-label {
-        position: absolute;
-        font-size: 10px;
-        text-align: center;
-        width: 60px;
-        top: 15px;
-        left: 50%;
-        transform-origin: 0 0;
-    }
-    .health-wheel {
-        width: 200px;
-        height: 200px;
-        margin: 20px 0 20px auto;
-        position: relative;
-        float: right;
-        clear: right;
-    }    @media (max-width: 768px) {
-        .container {
-            flex-direction: column;
-        }
-        .sidebar {
-            width: 100%;
-        }
-    }
-    .glow {
-        font-size: 48px;
-        color: #ffffff;
-        text-align: center;
-        -webkit-animation: glow 1s ease-in-out infinite alternate;
-        -moz-animation: glow 1s ease-in-out infinite alternate;
-        animation: glow 1s ease-in-out infinite alternate;
-    }
-    @-webkit-keyframes glow {
-        from {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
-        }
-        to {
-            text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
-        }
-    }
-</style></head><body>
+            h1 {
+                color: #4682b4;
+                font-size: 2.5em;
+                margin-bottom: 20px;
+            }
+            h2 {
+                color: #1e90ff;
+                font-size: 1.8em;
+                margin-top: 0;
+            }
+            .menu {
+                list-style-type: none;
+                padding: 0;
+            }
+            .menu li {
+                margin-bottom: 10px;
+            }
+            .menu a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1.1em;
+                transition: color 0.3s ease;
+            }
+            .menu a:hover {
+                color: #87cefa;
+            }
+            .article {
+                background-color: #fff;
+                border-radius: 8px;
+                padding: 20px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                overflow: hidden; /* Added to contain the floated wheel */
+            }
+            .health-wheel {
+                width: 300px;
+                height: 300px;
+                margin: 20px auto;
+                position: relative;
+            }
+            .health-segment {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                clip-path: polygon(50% 50%, 100% 0%, 100% 33%);
+                transition: transform 0.3s ease;
+            }
+            .health-segment:hover {
+                transform: scale(1.1);
+            }
+            .segment-label {
+                position: absolute;
+                font-size: 10px;
+                text-align: center;
+                width: 60px;
+                top: 15px;
+                left: 50%;
+                transform-origin: 0 0;
+            }
+            .health-wheel {
+                width: 200px;
+                height: 200px;
+                margin: 20px 0 20px auto;
+                position: relative;
+                float: right;
+                clear: right;
+            }    @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                }
+                .sidebar {
+                    width: 100%;
+                }
+            }
+            .glow {
+                font-size: 48px;
+                color: #ffffff;
+                text-align: center;
+                -webkit-animation: glow 1s ease-in-out infinite alternate;
+                -moz-animation: glow 1s ease-in-out infinite alternate;
+                animation: glow 1s ease-in-out infinite alternate;
+            }
+            @-webkit-keyframes glow {
+                from {
+                    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #006be6, 0 0 40px #006be6, 0 0 50px #006be6, 0 0 60px #006be6, 0 0 70px #006be6;
+                }
+                to {
+                    text-shadow: 0 0 20px #fff, 0 0 30px #4de4ff, 0 0 40px #4de4ff, 0 0 50px #4de4ff, 0 0 60px #4de4ff, 0 0 70px #4de4ff, 0 0 80px #4de4ff;
+                }
+            }
+        </style>
+    </head>
+    <body>
     <div class="container">
         <div class="menu-toggle">☰</div>
         <div class="sidebar">
@@ -187,7 +214,6 @@
         <div class="content">
             <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
             <h2>Salud Integral</h2>
-            <div class="health-wheel" id="healthWheel"></div>
             <div class="article">Creo
 firmemente en un enfoque de salud integral, donde nuestro bienestar no
 se limita a la ausencia de enfermedades, sino a un equilibrio armónico
@@ -245,27 +271,28 @@ es posible vivir una vida más plena y en armonía. ¡Empieza hoy!<br>
 </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+
+            menuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body></html>
-
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-
-    menuToggle.addEventListener('click', function() {
-        sidebar.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside on mobile
-    document.addEventListener('click', function(event) {
-        if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-            sidebar.classList.remove('active');
-        }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove('active');
-        }
-    });
-});
