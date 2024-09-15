@@ -201,10 +201,8 @@
             <div class="menu-toggle">☰</div>
             <h1 class="glow">Manteng&aacute;monos j&oacute;venes y saludables</h1>
             <h2>Socialmente Saludable</h2>
-            <div class="social-network" id="socialNetwork"></div>
-            <button class="interact-button">Interactuar</button>
             <div class="article">
-                <p>Ser socialmente saludable es un aspecto fundamental de nuestro bienestar general. En Urulooke, reconocemos la importancia de mantener relaciones positivas y significativas con las personas que nos rodean. Las conexiones sociales saludables no solo enriquecen nuestras vidas, sino que tambi&eacute;n tienen un impacto directo en nuestra salud f&iacute;sica y mental.</p>
+                <p>Ser socialmente saludable es un aspecto fundamental de nuestro bienestar general. Es muy importante reconocer la importancia de mantener relaciones positivas y significativas con las personas que nos rodean. Las conexiones sociales saludables no solo enriquecen nuestras vidas, sino que tambi&eacute;n tienen un impacto directo en nuestra salud f&iacute;sica y mental.</p>
 
                 <p>Una vida socialmente saludable implica cultivar y mantener relaciones de calidad con familiares, amigos, colegas y miembros de la comunidad. Estas conexiones nos proporcionan apoyo emocional, sentido de pertenencia y oportunidades para el crecimiento personal.</p>
 
@@ -234,113 +232,14 @@
 
                 <p>Recuerda que la calidad de tus relaciones es m&aacute;s importante que la cantidad. Es preferible tener un pequeño c&iacute;rculo de amigos cercanos y confiables que una gran red de conocidos superficiales.</p>
 
-                <p>En Urulooke, creemos que invertir en nuestra salud social es tan importante como cuidar nuestra salud f&iacute;sica y mental. Al cultivar relaciones positivas y significativas, no solo mejoramos nuestra propia vida, sino que tambi&eacute;n contribuimos a crear una comunidad m&aacute;s fuerte y saludable.</p>
+                <p>Estoy convencido que invertir en nuestra salud social es tan importante como cuidar nuestra salud f&iacute;sica y mental. Al cultivar relaciones positivas y significativas, no solo mejoramos nuestra propia vida, sino que tambi&eacute;n contribuimos a crear una comunidad m&aacute;s fuerte y saludable.</p>
 
                 <p>Toma el desaf&iacute;o de mejorar tu salud social hoy mismo. Ponte en contacto con un amigo que no has visto en mucho tiempo, &uacute;nete a un grupo local o simplemente practica la amabilidad con las personas que te rodean. Cada pequeño paso que des hacia una vida socialmente m&aacute;s saludable te acercar&aacute; a una existencia m&aacute;s feliz y plena.</p>
             </div>
         </div>
     </div>
     <script>
-        const socialNetwork = document.getElementById('socialNetwork');
-        const interactButton = document.querySelector('.interact-button');
-        const nodes = [];
-        const connections = [];
-
-        function createNode(x, y) {
-            const node = document.createElement('div');
-            node.className = 'node';
-            node.style.left = x + 'px';
-            node.style.top = y + 'px';
-            socialNetwork.appendChild(node);
-            nodes.push(node);
-            return node;
-        }
-
-        function createConnection(node1, node2) {
-            const connection = document.createElement('div');
-            connection.className = 'connection';
-            socialNetwork.appendChild(connection);
-            connections.push({ element: connection, node1, node2 });
-            updateConnection(connection, node1, node2);
-        }
-
-        function updateConnection(connection, node1, node2) {
-            const rect1 = node1.getBoundingClientRect();
-            const rect2 = node2.getBoundingClientRect();
-            const containerRect = socialNetwork.getBoundingClientRect();
-
-            const x1 = rect1.left - containerRect.left + rect1.width / 2;
-            const y1 = rect1.top - containerRect.top + rect1.height / 2;
-            const x2 = rect2.left - containerRect.left + rect2.width / 2;
-            const y2 = rect2.top - containerRect.top + rect2.height / 2;
-
-            const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-            const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-
-            connection.style.width = length + 'px';
-            connection.style.left = x1 + 'px';
-            connection.style.top = y1 + 'px';
-            connection.style.transform = `rotate(${angle}deg)`;
-        }
-
-        function initializeNetwork() {
-            const centerNode = createNode(150, 150);
-            for (let i = 0; i < 5; i++) {
-                const angle = (i / 5) * 2 * Math.PI;
-                const x = 150 + Math.cos(angle) * 100;
-                const y = 150 + Math.sin(angle) * 100;
-                const node = createNode(x, y);
-                createConnection(centerNode, node);
-            }
-        }
-
-        function animateNetwork() {
-            nodes.forEach(node => {
-                const x = Math.random() * (socialNetwork.clientWidth - 50);
-                const y = Math.random() * (socialNetwork.clientHeight - 50);
-                node.style.left = x + 'px';
-                node.style.top = y + 'px';
-            });
-
-            // Esperar a que se complete la transición de los nodos antes de actualizar las conexiones
-            setTimeout(updateAllConnections, 510); // 510ms es ligeramente mayor que la duración de la transición CSS
-        }
-
-        function updateAllConnections() {
-            connections.forEach(conn => {
-                updateConnection(conn.element, conn.node1, conn.node2);
-            });
-        }
-
-        initializeNetwork();
-
-        interactButton.addEventListener('click', animateNetwork);
-
-        // Actualizar conexiones cuando se redimensiona la ventana
-        window.addEventListener('resize', updateAllConnections);
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-
-            // Close menu when clicking outside on mobile
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
+        // Page scripts
     </script>
 </body>
 </html>

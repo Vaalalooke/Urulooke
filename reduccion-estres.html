@@ -198,14 +198,6 @@
         <div class="content">
             <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
             <h2>Reducción del estrés</h2>
-            <div class="stress-meter">
-                <svg width="200" height="200" viewBox="0 0 200 200">
-                    <circle class="meter-background" cx="100" cy="100" r="90" />
-                    <path class="meter-fill" d="M100 10 A90 90 0 0 1 100 190 A90 90 0 0 1 100 10" />
-                    <text class="meter-text" x="100" y="120" text-anchor="middle">100%</text>
-                </svg>
-            </div>
-            <button class="relaxation-button">Respira profundo</button>
             <div class="article">
                 <p>El estrés es una respuesta natural del cuerpo ante desafíos o amenazas, pero cuando se vuelve crónico, afecta profundamente nuestra salud física y mental. Es muy importante gestionar el estrés ya que es clave para un estilo de vida saludable y equilibrado, y que hacerlo puede transformar no solo nuestra mente, sino también nuestro cuerpo.</p>
 
@@ -220,52 +212,7 @@
         </div>
     </div>
     <script>
-        let stressLevel = 100;
-        const meterFill = document.querySelector('.meter-fill');
-        const meterText = document.querySelector('.meter-text');
-        const relaxButton = document.querySelector('.relaxation-button');
-        function updateMeter() {
-            const angle = (stressLevel / 100) * 359.99; // Usamos 359.99 para evitar problemas de redondeo
-            const radians = angle * Math.PI / 180;
-            const x = 100 + 90 * Math.sin(radians);
-            const y = 100 - 90 * Math.cos(radians);
-            const largeArcFlag = angle > 180 ? 1 : 0;
-            meterFill.setAttribute('d', `M100 10 A90 90 0 ${largeArcFlag} 1 ${x} ${y} L100 100 Z`);
-            meterText.textContent = `${stressLevel}%`;
-        }
-
-        // Llamamos a updateMeter() inmediatamente después de definirla
-        updateMeter();
-
-        relaxButton.addEventListener('click', function() {
-            if (stressLevel > 0) {
-                stressLevel = Math.max(0, stressLevel - 10);
-                updateMeter();
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-
-            // Close menu when clicking outside on mobile
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
+        // Scripts for the page
     </script>
 </body>
 </html>

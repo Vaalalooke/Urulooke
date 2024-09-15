@@ -170,10 +170,6 @@
         <div class="content">
             <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
             <h2>Sueño reparador</h2>
-            <svg class="moon-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="#f1c40f"/>
-                <circle cx="65" cy="35" r="40" fill="#2c3e50"/>
-            </svg>
             <div class="article">
                 <p>El sueño reparador es fundamental para mantener una buena salud y bienestar general. Durante el sueño, nuestro cuerpo realiza importantes procesos de reparación y regeneración celular, consolidación de la memoria y regulación hormonal. Un descanso adecuado nos permite enfrentar el día con energía y vitalidad renovadas.</p>
 
@@ -188,41 +184,7 @@
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const moon = document.querySelector('.moon-svg');
-            let rotation = 0;
-            
-            function rotateMoon() {
-                rotation += 0.1;
-                moon.style.transform = `rotate(${rotation}deg)`;
-                requestAnimationFrame(rotateMoon);
-            }
-            
-            rotateMoon();
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
-
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
-
-            // Close menu when clicking outside on mobile
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
+        // Scripts for the page
     </script>
 </body>
 </html>

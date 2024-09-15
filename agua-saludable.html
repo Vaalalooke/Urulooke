@@ -213,17 +213,14 @@
         <div class="content">
             <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
             <h2>Agua deliciosa y saludable</h2>
-            <div class="water-animation">
-                <div class="water-wave"></div>
-            </div>
             <div class="article">
-                <p>El agua es esencial para la vida y fundamental para mantener una salud óptima. En Urulooke, creemos que el agua no solo debe ser saludable, sino también deliciosa, para que mantener una buena hidratación sea un placer y no una obligación.</p>
+                <p>El agua es esencial para la vida y fundamental para mantener una salud óptima. Aunque el agua no solo debe ser saludable, sino también deliciosa, para que mantener una buena hidratación sea un placer y no una obligación.</p>
 
                 <p>El cuerpo humano está compuesto en gran parte por agua, y necesitamos reponerla constantemente para mantener nuestras funciones vitales. Beber suficiente agua ayuda a regular la temperatura corporal, transportar nutrientes y oxígeno a las células, eliminar toxinas, mantener las articulaciones lubricadas y preservar la salud de órganos vitales como los riñones.</p>
 
                 <p>Pero no toda el agua es igual. La calidad del agua que bebemos es tan importante como la cantidad. El agua pura y limpia, libre de contaminantes y con un equilibrio adecuado de minerales, no solo es más saludable, sino que también tiene un sabor más agradable. Esto hace que sea más fácil y placentero mantenerse hidratado.</p>
 
-                <p>En Urulooke, promovemos varias formas de hacer que el agua sea más deliciosa y atractiva:</p>
+                <p>Existen varias formas de hacer que el agua sea más deliciosa y atractiva:</p>
 
                 <ul>
                     <li>Infusiones naturales: Agregar rodajas de frutas frescas como limón, naranja o fresas, o hierbas como menta o albahaca, puede dar al agua un sabor refrescante sin añadir calorías.</li>
@@ -237,50 +234,40 @@
                 <p>Es importante recordar que las necesidades de hidratación varían según factores como el clima, la actividad física y la dieta. En general, se recomienda beber al menos 8 vasos de agua al día, pero algunas personas pueden necesitar más.</p>
 
                 <p>Te animo a explorar diferentes formas de hacer que el agua sea una parte deliciosa y refrescante de tu rutina diaria. Descubre tus combinaciones favoritas de frutas y hierbas, invierte en un buen sistema de filtración si es necesario, y disfruta de los beneficios de mantenerte bien hidratado. Recuerda, cada sorbo de agua pura y deliciosa es un paso hacia una mejor salud y vitalidad.</p>
+                <div class="container">
+                    <h2>Calculadora de Agua Diaria</h2>
+                    <form id="waterForm">
+                        <label for="age">Edad (años):</label><br>
+                        <input type="number" id="age" name="age" required><br>
+            
+                        <label for="weight">Peso (kg):</label><br>
+                        <input type="number" id="weight" name="weight" required><br>
+            
+                        <label for="height">Estatura (cm):</label><br>
+                        <input type="number" id="height" name="height" required><br>
+            
+                        <button type="submit">Calcular</button>
+                    </form>
+                    <div class="result" id="result"></div>
+                </div>
             </div>
         </div>
     </div>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const waterAnimation = document.querySelector('.water-animation');
-            
-            function createWaterDrop() {
-                const drop = document.createElement('div');
-                drop.classList.add('water-drop');
-                drop.style.left = `${Math.random() * 200}px`;
-                drop.style.width = `${Math.random() * 10 + 5}px`;
-                drop.style.height = drop.style.width;
-                drop.style.animationDuration = `${Math.random() * 1 + 1}s`;
-                waterAnimation.appendChild(drop);
-                
-                setTimeout(() => {
-                    waterAnimation.removeChild(drop);
-                }, 2000);
-            }
-            
-            setInterval(createWaterDrop, 200);
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const sidebar = document.querySelector('.sidebar');
+        document.getElementById('waterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-            menuToggle.addEventListener('click', function() {
-                sidebar.classList.toggle('active');
-            });
+            // Obtener valores del formulario
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+            const height = document.getElementById('height').value;
 
-            // Close menu when clicking outside on mobile
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-                    sidebar.classList.remove('active');
-                }
-            });
+            // Fórmula: 0.035 litros de agua por kilogramo de peso corporal
+            const waterIntake = (weight * 0.035).toFixed(2);
+            const glasses = (waterIntake / 0.250).toFixed(0);
 
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    sidebar.classList.remove('active');
-                }
-            });
+            // Mostrar resultado
+            document.getElementById('result').innerHTML = `Debes tomar aproximadamente ${waterIntake} litros de agua al día. Esto es ${glasses} vasos de agua al día de 250ml aproximados.`;
         });
     </script>
 </body>
