@@ -69,6 +69,7 @@
             .content {
                 flex: 1;
                 padding: 20px;
+                opacity: 0.80;
             }
             h1 {
                 color: #0077be;
@@ -212,8 +213,8 @@
         </div>
         <div class="content">
             <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
-            <h2>Agua deliciosa y saludable</h2>
             <div class="article">
+                <h2>Agua deliciosa y saludable</h2>
                 <p>El agua es esencial para la vida y fundamental para mantener una salud óptima. Aunque el agua no solo debe ser saludable, sino también deliciosa, para que mantener una buena hidratación sea un placer y no una obligación.</p>
 
                 <p>El cuerpo humano está compuesto en gran parte por agua, y necesitamos reponerla constantemente para mantener nuestras funciones vitales. Beber suficiente agua ayuda a regular la temperatura corporal, transportar nutrientes y oxígeno a las células, eliminar toxinas, mantener las articulaciones lubricadas y preservar la salud de órganos vitales como los riñones.</p>
@@ -267,7 +268,7 @@
             const glasses = (waterIntake / 0.250).toFixed(0);
 
             // Mostrar resultado
-            document.getElementById('result').innerHTML = `Debes tomar aproximadamente ${waterIntake} litros de agua al día. Esto es ${glasses} vasos de agua al día de 250ml aproximados.`;
+            document.getElementById('result').innerHTML = `Debes tomar aproximadamente ${waterIntake} litros de agua al día. Esto es ${glasses} vasos de agua de 250ml al día aproximados.`;
         });
     </script>
 </body>
