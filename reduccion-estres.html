@@ -225,11 +225,11 @@
             <h2><a href="index.html" data-i18n="navHome">Home</a></h2>
             <ul class="menu">
                 <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
-                <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
+                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentación saludable</a></li>
                 <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
                 <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
                 <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
-                <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
+                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducción del estrés</a></li>
                 <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
                 <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
                 <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
@@ -238,21 +238,63 @@
         <div class="content">
             <h1 class="glow" data-i18n="heroTitleAlt">Mantengámonos jóvenes y saludables</h1>
             <div class="article">
-                <h2>Reducción del estrés</h2>
-                <p>El estrés es una respuesta natural del cuerpo ante desafíos o amenazas, pero cuando se vuelve crónico, afecta profundamente nuestra salud física y mental. Es muy importante gestionar el estrés ya que es clave para un estilo de vida saludable y equilibrado, y que hacerlo puede transformar no solo nuestra mente, sino también nuestro cuerpo.</p>
+            <h2 data-i18n="stressReductionTitle">Reducción del estrés</h2>
+            <p data-i18n="stressReductionP1">El estrés es una respuesta natural del cuerpo ante desafíos o amenazas, pero cuando se vuelve crónico, afecta profundamente nuestra salud física y mental. Es muy importante gestionar el estrés ya que es clave para un estilo de vida saludable y equilibrado, y que hacerlo puede transformar no solo nuestra mente, sino también nuestro cuerpo.</p>
 
-                <p>Al reducir el estrés, abrimos la puerta a una serie de beneficios que mejoran nuestra calidad de vida. Desde fortalecer el sistema inmunológico y bajar la presión arterial hasta disfrutar de un sueño reparador y una mayor claridad mental. Más energía, vitalidad y relaciones más armoniosas son solo algunos de los frutos de manejar el estrés de manera efectiva.</p>
-                    
-                <p>Las técnicas para reducir el estrés varían, yo estoy convencido en la simplicidad y la conexión con nosotros mismos. Practicar la meditación y el mindfulness te ayuda a mantenerte presente, mientras que el ejercicio físico libera endorfinas, los "químicos del bienestar" que elevan el ánimo. La respiración profunda activa la relajación del cuerpo, y el yoga une el movimiento, la meditación y la respiración para alcanzar un equilibrio físico y mental. Pasar tiempo en la naturaleza, alejado del bullicio, reduce el cortisol, y las actividades creativas y los hobbies permiten desconectar y disfrutar del momento.</p>
-                    
-                <p>Mantener conexiones sociales saludables también es crucial para manejar el estrés. La importancia del apoyo mutuo es crucial, y el tiempo que dedicamos a nuestras relaciones puede marcar una gran diferencia. Además, organizarse y gestionar bien el tiempo da una sensación de control y evita la sobrecarga, un elemento vital para mantener el equilibrio.</p>
-                    
-                <p>Recuerda, no hay una sola manera de manejar el estrés que funcione para todos. Te invitamos a explorar diferentes métodos y a encontrar aquellos que se alineen con tu estilo de vida. La gestión del estrés es una inversión continua en tu bienestar y felicidad. ¡Cada pequeño paso hacia una vida más relajada y equilibrada es un gran avance hacia un futuro lleno de salud y plenitud!</p>
+            <p data-i18n="stressReductionP2">Al reducir el estrés, abrimos la puerta a una serie de beneficios que mejoran nuestra calidad de vida. Desde fortalecer el sistema inmunológico y bajar la presión arterial hasta disfrutar de un sueño reparador y una mayor claridad mental. Más energía, vitalidad y relaciones más armoniosas son solo algunos de los frutos de manejar el estrés de manera efectiva.</p>
+                
+            <p data-i18n="stressReductionP3">Las técnicas para reducir el estrés varían, yo estoy convencido en la simplicidad y la conexión con nosotros mismos. Practicar la meditación y el mindfulness te ayuda a mantenerte presente, mientras que el ejercicio físico libera endorfinas, los "químicos del bienestar" que elevan el ánimo. La respiración profunda activa la relajación del cuerpo, y el yoga une el movimiento, la meditación y la respiración para alcanzar un equilibrio físico y mental. Pasar tiempo en la naturaleza, alejado del bullicio, reduce el cortisol, y las actividades creativas y los hobbies permiten desconectar y disfrutar del momento.</p>
+                
+            <p data-i18n="stressReductionP4">Mantener conexiones sociales saludables también es crucial para manejar el estrés. La importancia del apoyo mutuo es crucial, y el tiempo que dedicamos a nuestras relaciones puede marcar una gran diferencia. Además, organizarse y gestionar bien el tiempo da una sensación de control y evita la sobrecarga, un elemento vital para mantener el equilibrio.</p>
+                
+            <p data-i18n="stressReductionP5">Recuerda, no hay una sola manera de manejar el estrés que funcione para todos. Te invitamos a explorar diferentes métodos y a encontrar aquellos que se alineen con tu estilo de vida. La gestión del estrés es una inversión continua en tu bienestar y felicidad. ¡Cada pequeño paso hacia una vida más relajada y equilibrada es un gran avance hacia un futuro lleno de salud y plenitud!</p>
             </div>
         </div>
     </div>
     <script>
-        // Scripts for the page
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const languageToggle = document.getElementById('languageToggle');
+            let currentLang = 'es';
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && (!menuToggle || !menuToggle.contains(event.target))) {
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+            
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function() {
+                    currentLang = currentLang === 'es' ? 'en' : 'es';
+                    languageToggle.textContent = currentLang === 'es' ? 'English' : 'Español';
+                    document.querySelectorAll('[data-i18n]').forEach(function(element) {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[currentLang] && translations[currentLang][key]) {
+                            element.textContent = translations[currentLang][key];
+                        }
+                    });
+                    document.querySelectorAll('[data-i18n-title]').forEach(function(element) {
+                        const key = element.getAttribute('data-i18n-title');
+                        if (translations[currentLang] && translations[currentLang][key]) {
+                            document.title = translations[currentLang][key];
+                        }
+                    });
+                });
+            }
+        });
     </script>
     <script src="translations.js"></script>
 </body>

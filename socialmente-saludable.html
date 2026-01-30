@@ -223,23 +223,23 @@
     <body>
         <button id="languageToggle" class="language-toggle">English</button>
     <div class="container">
+        <div class="menu-toggle">☰</div>
         <div class="sidebar">
             <h2><a href="index.html" data-i18n="navHome">Home</a></h2>
             <ul class="menu">
                 <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
-                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentaci<li><a href="alimentacion-saludable.html">Alimentaci&oacute;n saludable</a></li>oacute;n saludable</a></li>
+                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentación saludable</a></li>
                 <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
                 <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
                 <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
-                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducci<li><a href="reduccion-estres.html">Reducci&oacute;n del estr&eacute;s</a></li>oacute;n del estr<li><a href="reduccion-estres.html">Reducci&oacute;n del estr&eacute;s</a></li>eacute;s</a></li>
+                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducción del estrés</a></li>
                 <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
                 <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
                 <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
             </ul>
         </div>
         <div class="content">
-            <div class="menu-toggle">☰</div>
-            <h1 class="glow" data-i18n="heroTitleAlt">Manteng<h1 class="glow">Manteng&aacute;monos j&oacute;venes y saludables</h1>aacute;monos j<h1 class="glow">Manteng&aacute;monos j&oacute;venes y saludables</h1>oacute;venes y saludables</h1>
+            <h1 class="glow" data-i18n="heroTitleAlt">Mantengámonos jóvenes y saludables</h1>
             <div class="article">
                 <h2 data-i18n="socialHealthTitle">Socialmente Saludable</h2>
                 <p>Ser socialmente saludable es un aspecto fundamental de nuestro bienestar general. Es muy importante reconocer la importancia de mantener relaciones positivas y significativas con las personas que nos rodean. Las conexiones sociales saludables no solo enriquecen nuestras vidas, sino que tambi&eacute;n tienen un impacto directo en nuestra salud f&iacute;sica y mental.</p>
@@ -279,7 +279,49 @@
         </div>
     </div>
     <script>
-        // Page scripts
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const sidebar = document.querySelector('.sidebar');
+            const languageToggle = document.getElementById('languageToggle');
+            let currentLang = 'es';
+            
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function() {
+                    sidebar.classList.toggle('active');
+                });
+            }
+
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768 && !sidebar.contains(event.target) && (!menuToggle || !menuToggle.contains(event.target))) {
+                    sidebar.classList.remove('active');
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+            
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function() {
+                    currentLang = currentLang === 'es' ? 'en' : 'es';
+                    languageToggle.textContent = currentLang === 'es' ? 'English' : 'Español';
+                    document.querySelectorAll('[data-i18n]').forEach(function(element) {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[currentLang] && translations[currentLang][key]) {
+                            element.textContent = translations[currentLang][key];
+                        }
+                    });
+                    document.querySelectorAll('[data-i18n-title]').forEach(function(element) {
+                        const key = element.getAttribute('data-i18n-title');
+                        if (translations[currentLang] && translations[currentLang][key]) {
+                            document.title = translations[currentLang][key];
+                        }
+                    });
+                });
+            }
+        });
     </script>
     <script src="translations.js"></script>
 </body>

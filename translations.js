@@ -164,6 +164,7 @@ const translations = {
         // Index page
         "pageTitle": "Let's Stay Young and Healthy",
         "heroTitle": "Young at Any Age",
+        "heroTitleAlt": "Let's Stay Young and Healthy",
         "heroSubtitle": "Let's Stay Young and Healthy",
         
         // Navigation
