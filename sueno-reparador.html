@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
         <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-        <title>Sueño reparador</title>
+        <title data-i18n-title="restfulSleepTitle">Sueño reparador</title>
         <style>
             body, html {
                 margin: 0;
@@ -67,6 +67,24 @@
                 padding: 5px 10px;
                 border-radius: 5px;
                 z-index: 1001;
+            }
+            .language-toggle {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                z-index: 1001;
+                border: none;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+            }
+            .language-toggle:hover {
+                background-color: #3498db;
             }
 
             h1 {
@@ -152,40 +170,37 @@
         </style>
     </head>
     <body>
-    <div class="container">
+        <button id="languageToggle" class="language-toggle">English</button>
         <div class="menu-toggle">☰</div>
         <div class="sidebar">
-            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="index.html" data-i18n="navHome">Home</a></h2>
             <ul class="menu">
-                <li><a href="salud-financiera.html">Salud financiera</a></li>
-                <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
-                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
-                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
-                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
-                <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
-                <li><a href="salud-mental.html">Salud mental</a></li>
-                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
-                <li><a href="salud-integral.html">Salud integral</a></li>
+                <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
+                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentación saludable</a></li>
+                <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
+                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducción del estrés</a></li>
+                <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
+            <h1 class="glow" data-i18n="heroTitleAlt">Mantengámonos jóvenes y saludables</h1>
             <div class="article">
-                <h2>Sueño reparador</h2>
-                <p>El sueño reparador es fundamental para mantener una buena salud y bienestar general. Durante el sueño, nuestro cuerpo realiza importantes procesos de reparación y regeneración celular, consolidación de la memoria y regulación hormonal. Un descanso adecuado nos permite enfrentar el día con energía y vitalidad renovadas.</p>
+                <h2 data-i18n="restfulSleepTitle">Sueño reparador</h2>
+                <p data-i18n="restfulSleepP1">El sueño reparador es fundamental para mantener una buena salud y bienestar general. Durante el sueño, nuestro cuerpo realiza importantes procesos de reparación y regeneración celular, consolidación de la memoria y regulación hormonal. Un descanso adecuado nos permite enfrentar el día con energía y vitalidad renovadas.</p>
 
-                <p>Para lograr un sueño reparador, es importante establecer una rutina de sueño consistente. Esto implica acostarse y levantarse a la misma hora todos los días, incluso los fines de semana. Crear un ambiente propicio para el descanso también es crucial: una habitación oscura, fresca y silenciosa favorece un sueño de calidad.</p>
+                <p data-i18n="restfulSleepP2">Para lograr un sueño reparador, es importante establecer una rutina de sueño consistente. Esto implica acostarse y levantarse a la misma hora todos los días, incluso los fines de semana. Crear un ambiente propicio para el descanso también es crucial: una habitación oscura, fresca y silenciosa favorece un sueño de calidad.</p>
 
-                <p>La higiene del sueño también incluye evitar el uso de dispositivos electrónicos antes de dormir, ya que la luz azul que emiten puede interferir con la producción de melatonina, la hormona del sueño. En su lugar, se recomienda realizar actividades relajantes como leer un libro, practicar meditación o escuchar música suave.</p>
+                <p data-i18n="restfulSleepP3">La higiene del sueño también incluye evitar el uso de dispositivos electrónicos antes de dormir, ya que la luz azul que emiten puede interferir con la producción de melatonina, la hormona del sueño. En su lugar, se recomienda realizar actividades relajantes como leer un libro, practicar meditación o escuchar música suave.</p>
 
-                <p>La alimentación y el ejercicio también juegan un papel importante en la calidad del sueño. Evitar comidas pesadas y estimulantes como la cafeína en las horas previas a dormir puede ayudar a conciliar el sueño más fácilmente. Por otro lado, el ejercicio regular mejora la calidad del sueño, aunque es preferible realizarlo durante el día y no justo antes de acostarse.</p>
+                <p data-i18n="restfulSleepP4">La alimentación y el ejercicio también juegan un papel importante en la calidad del sueño. Evitar comidas pesadas y estimulantes como la cafeína en las horas previas a dormir puede ayudar a conciliar el sueño más fácilmente. Por otro lado, el ejercicio regular mejora la calidad del sueño, aunque es preferible realizarlo durante el día y no justo antes de acostarse.</p>
 
-                <p>Recuerda que cada persona es diferente y puede necesitar ajustar estos consejos a su estilo de vida y necesidades particulares. Lo importante es encontrar una rutina que te permita despertar sintiéndote descansado y listo para enfrentar un nuevo día con energía y optimismo.</p>
+                <p data-i18n="restfulSleepP5">Recuerda que cada persona es diferente y puede necesitar ajustar estos consejos a su estilo de vida y necesidades particulares. Lo importante es encontrar una rutina que te permita despertar sintiéndote descansado y listo para enfrentar un nuevo día con energía y optimismo.</p>
             </div>
         </div>
     </div>
-    <script>
-        // Scripts for the page
-    </script>
-</body>
+    <script src="translations.js"></script>
 </html>

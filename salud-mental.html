@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
         <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-        <title>Salud Mental</title>
+        <title data-i18n-title="mentalHealthTitle">Salud Mental</title>
         <style>
             body, html {
                 margin: 0;
@@ -55,6 +55,25 @@
                 flex: 1;
                 padding: 20px;
             }
+            .language-toggle {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                z-index: 1001;
+                border: none;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+            }
+            .language-toggle:hover {
+                background-color: #3498db;
+            }
+
             .menu-toggle {
                 display: none;
                 position: fixed;
@@ -150,7 +169,26 @@
                     padding-top: 60px;
                 }
 
-                .menu-toggle {
+                .language-toggle {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                z-index: 1001;
+                border: none;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+            }
+            .language-toggle:hover {
+                background-color: #3498db;
+            }
+
+            .menu-toggle {
                     display: block;
                 }
             }
@@ -173,26 +211,27 @@
         </style>
     </head>
     <body>
+        <button id="languageToggle" class="language-toggle">English</button>
     <div class="container">
         <div class="menu-toggle">☰</div>
         <div class="sidebar">
             <h2><a href="Index.html">Home</a></h2>
             <ul class="menu">
-                <li><a href="salud-financiera.html">Salud financiera</a></li>
+                <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
                 <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
-                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
-                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
-                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
+                <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
                 <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
-                <li><a href="salud-mental.html">Salud mental</a></li>
-                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
-                <li><a href="salud-integral.html">Salud integral</a></li>
+                <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
+            <h1 class="glow" data-i18n="heroTitleAlt">Mantengámonos jóvenes y saludables</h1>
             <div class="article">
-                <h2>Salud Mental</h2>
+                <h2 data-i18n="mentalHealthTitle">Salud Mental</h2>
                 <p>La salud mental es un componente fundamental del bienestar general y juega un papel crucial en nuestra capacidad para llevar una vida plena y satisfactoria. En lo personal, reconozco la importancia de cuidar nuestra mente tanto como cuidamos nuestro cuerpo.</p>
 
                 <p>La salud mental abarca nuestro bienestar emocional, psicológico y social. Afecta la forma en que pensamos, sentimos y actuamos en nuestra vida diaria. También influye en cómo manejamos el estrés, nos relacionamos con los demás y tomamos decisiones.</p>
@@ -232,5 +271,6 @@
     <script>
         // Page scripts
     </script>
+    <script src="translations.js"></script>
 </body>
 </html>

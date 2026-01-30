@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
         <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-        <title>Limpieza del aire</title>
+        <title data-i18n-title="cleanAirTitle">Limpieza del aire</title>
         <style>
             body, html {
                 margin: 0;
@@ -68,6 +68,24 @@
                 padding: 5px 10px;
                 border-radius: 5px;
                 z-index: 1001;
+            }
+            .language-toggle {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                z-index: 1001;
+                border: none;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+            }
+            .language-toggle:hover {
+                background-color: #3498db;
             }
             h1 {
                 color: #2c3e50;
@@ -146,39 +164,40 @@
             }
         </style>
 </head>
-<body>
-    <div class="container">
+    <body>
+        <button id="languageToggle" class="language-toggle">English</button>
         <div class="menu-toggle">☰</div>
         <div class="sidebar">
-            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="index.html" data-i18n="navHome">Home</a></h2>
             <ul class="menu">
-                <li><a href="salud-financiera.html">Salud financiera</a></li>
-                <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
-                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
-                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
-                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
-                <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
-                <li><a href="salud-mental.html">Salud mental</a></li>
-                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
-                <li><a href="salud-integral.html">Salud integral</a></li>
+                <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
+                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentación saludable</a></li>
+                <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
+                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducción del estrés</a></li>
+                <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1 class="glow">Mantengámonos jóvenes y saludables</h1>
+            <h1 class="glow" data-i18n="heroTitleAlt">Mantengámonos jóvenes y saludables</h1>
             <div class="article">
-                <h2>Limpieza del aire</h2>
-                <p>La calidad del aire que respiramos es fundamental para nuestra salud y bienestar, aunque a menudo pasa desapercibida en nuestra rutina diaria. En un entorno donde la contaminación del aire se ha convertido en una amenaza silenciosa, es crucial comprender el impacto que tiene en nuestro cuerpo. Los contaminantes, como partículas finas, gases tóxicos y alérgenos, no solo afectan nuestros pulmones, sino que también pueden desencadenar problemas cardiovasculares, afectar nuestro sistema inmunológico y deteriorar nuestra salud mental. La limpieza del aire en nuestros hogares y espacios de trabajo es el primer paso para protegernos de estos peligros invisibles.</p>
+                <h2 data-i18n="cleanAirTitle">Limpieza del aire</h2>
+                <p data-i18n="cleanAirP1">La calidad del aire que respiramos es fundamental para nuestra salud y bienestar, aunque a menudo pasa desapercibida en nuestra rutina diaria. En un entorno donde la contaminación del aire se ha convertido en una amenaza silenciosa, es crucial comprender el impacto que tiene en nuestro cuerpo. Los contaminantes, como partículas finas, gases tóxicos y alérgenos, no solo afectan nuestros pulmones, sino que también pueden desencadenar problemas cardiovasculares, afectar nuestro sistema inmunológico y deteriorar nuestra salud mental. La limpieza del aire en nuestros hogares y espacios de trabajo es el primer paso para protegernos de estos peligros invisibles.</p>
 
-                <p>Estoy convencido que un ambiente limpio es la base de una vida saludable. Incorporar plantas de interior, utilizar purificadores de aire y ventilar adecuadamente nuestros espacios son acciones sencillas pero efectivas para mejorar la calidad del aire que respiramos. Las plantas, por ejemplo, no solo embellecen nuestros hogares, sino que también actúan como filtros naturales, eliminando toxinas y liberando oxígeno puro. Cada pequeña acción cuenta cuando se trata de reducir la exposición a contaminantes y mejorar nuestro bienestar general.</p>
+                <p data-i18n="cleanAirP2">Estoy convencido que un ambiente limpio es la base de una vida saludable. Incorporar plantas de interior, utilizar purificadores de aire y ventilar adecuadamente nuestros espacios son acciones sencillas pero efectivas para mejorar la calidad del aire que respiramos. Las plantas, por ejemplo, no solo embellecen nuestros hogares, sino que también actúan como filtros naturales, eliminando toxinas y liberando oxígeno puro. Cada pequeña acción cuenta cuando se trata de reducir la exposición a contaminantes y mejorar nuestro bienestar general.</p>
                     
-                <p>Además de tomar medidas en casa, es importante considerar el impacto que tiene nuestro entorno urbano en la calidad del aire. La contaminación causada por el tráfico, las industrias y el uso excesivo de plásticos contribuye a la degradación del aire que respiramos. Optar por el transporte público, utilizar bicicleta o caminar no solo reduce nuestra huella de carbono, sino que también contribuye a un aire más limpio en nuestras ciudades. La limpieza del aire no es solo una responsabilidad personal, sino también un compromiso con la comunidad y el planeta.</p>
+                <p data-i18n="cleanAirP3">Además de tomar medidas en casa, es importante considerar el impacto que tiene nuestro entorno urbano en la calidad del aire. La contaminación causada por el tráfico, las industrias y el uso excesivo de plásticos contribuye a la degradación del aire que respiramos. Optar por el transporte público, utilizar bicicleta o caminar no solo reduce nuestra huella de carbono, sino que también contribuye a un aire más limpio en nuestras ciudades. La limpieza del aire no es solo una responsabilidad personal, sino también un compromiso con la comunidad y el planeta.</p>
                     
-                <p>El aire limpio es un recurso vital, y su protección requiere un esfuerzo conjunto. Es fundamental abogar por políticas públicas que promuevan energías limpias, reduzcan las emisiones industriales y protejan nuestros bosques y áreas verdes. En lo personal, estoy convencido de que, al unirnos para mejorar la calidad del aire, no solo estamos cuidando de nuestra salud, sino también asegurando un futuro más sostenible para las generaciones venideras.</p>
+                <p data-i18n="cleanAirP4">El aire limpio es un recurso vital, y su protección requiere un esfuerzo conjunto. Es fundamental abogar por políticas públicas que promuevan energías limpias, reduzcan las emisiones industriales y protejan nuestros bosques y áreas verdes. En lo personal, estoy convencido de que, al unirnos para mejorar la calidad del aire, no solo estamos cuidando de nuestra salud, sino también asegurando un futuro más sostenible para las generaciones venideras.</p>
                     
-                <p>En conclusión, la limpieza del aire es una inversión en nuestra salud y en el bienestar del planeta. Al ser conscientes de los contaminantes a los que estamos expuestos y al tomar medidas para reducirlos, podemos crear un entorno más saludable y armonioso para nosotros y para aquellos que nos rodean. Cada respiro cuenta, y cada acción que tomemos para purificar el aire nos acerca un paso más hacia una vida plena y equilibrada.</p>
+                <p data-i18n="cleanAirP5">En conclusión, la limpieza del aire es una inversión en nuestra salud y en el bienestar del planeta. Al ser conscientes de los contaminantes a los que estamos expuestos y al tomar medidas para reducirlos, podemos crear un entorno más saludable y armonioso para nosotros y para aquellos que nos rodean. Cada respiro cuenta, y cada acción que tomemos para purificar el aire nos acerca un paso más hacia una vida plena y equilibrada.</p>
             </div>
         </div>
     </div>
+    <script src="translations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');

@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css">
         <link rel="icon" href="images/dragon_blue_background_32.ico" type="image/x-icon">
-        <title>Alimentación saludable</title>
+        <title data-i18n-title="healthyEatingTitle">Alimentación saludable</title>
         <style>
             body, html {
                 margin: 0;
@@ -67,6 +67,24 @@
                 padding: 5px 10px;
                 border-radius: 5px;
                 z-index: 1001;
+            }
+            .language-toggle {
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                font-size: 16px;
+                cursor: pointer;
+                background-color: #4682b4;
+                color: #fff;
+                padding: 8px 15px;
+                border-radius: 5px;
+                z-index: 1001;
+                border: none;
+                font-family: century-gothic, sans-serif;
+                font-weight: 400;
+            }
+            .language-toggle:hover {
+                background-color: #3498db;
             }
         h1 {
                 color: #2c3e50;
@@ -145,39 +163,40 @@
             }
         </style>
 </head>
-<body>
-    <div class="container">
+    <body>
+        <button id="languageToggle" class="language-toggle">English</button>
         <div class="menu-toggle">☰</div>
         <div class="sidebar">
-            <h2><a href="index.html">Home</a></h2>
+            <h2><a href="index.html" data-i18n="navHome">Home</a></h2>
             <ul class="menu">
-                <li><a href="salud-financiera.html">Salud financiera</a></li>
-                <li><a href="alimentacion-saludable.html">Alimentación saludable</a></li>
-                <li><a href="limpieza-del-aire.html">Limpieza del aire</a></li>
-                <li><a href="sueno-reparador.html">Sueño reparador</a></li>
-                <li><a href="agua-saludable.html">Agua deliciosa y saludable</a></li>
-                <li><a href="reduccion-estres.html">Reducción del estrés</a></li>
-                <li><a href="salud-mental.html">Salud mental</a></li>
-                <li><a href="socialmente-saludable.html">Socialmente saludable</a></li>
-                <li><a href="salud-integral.html">Salud integral</a></li>
+                <li><a href="salud-financiera.html" data-i18n="navFinancialHealth">Salud financiera</a></li>
+                <li><a href="alimentacion-saludable.html" data-i18n="navHealthyEating">Alimentación saludable</a></li>
+                <li><a href="limpieza-del-aire.html" data-i18n="navCleanAir">Limpieza del aire</a></li>
+                <li><a href="sueno-reparador.html" data-i18n="navRestfulSleep">Sueño reparador</a></li>
+                <li><a href="agua-saludable.html" data-i18n="navHealthyWater">Agua deliciosa y saludable</a></li>
+                <li><a href="reduccion-estres.html" data-i18n="navStressReduction">Reducción del estrés</a></li>
+                <li><a href="salud-mental.html" data-i18n="navMentalHealth">Salud mental</a></li>
+                <li><a href="socialmente-saludable.html" data-i18n="navSocialHealth">Socialmente saludable</a></li>
+                <li><a href="salud-integral.html" data-i18n="navHolisticHealth">Salud integral</a></li>
             </ul>
         </div>
         <div class="content">
-            <h1 class="glow">Manteng&aacute;monos jóvenes y saludables</h1>
+            <h1 class="glow" data-i18n="heroTitleAlt">Manteng&aacute;monos jóvenes y saludables</h1>
             <div class="article">
-                <h2>Alimentaci&oacute;n saludable</h2>
-                <p>La alimentación saludable es mucho más que simplemente contar calorías; es una conexión profunda entre lo que consumimos y cómo nos sentimos día a día. En un mundo donde los alimentos procesados y contaminados son cada vez más comunes, es esencial ser conscientes de los contaminantes que se infiltran en nuestra dieta. Desde pesticidas en frutas y verduras hasta residuos químicos en carnes y pescados, estos elementos no solo afectan nuestra salud física, sino también nuestro bienestar mental. Adoptar una alimentación limpia, basada en productos frescos y orgánicos, es un paso fundamental para protegernos de estas toxinas y fortalecer nuestro sistema inmunológico.</p>
+                <h2 data-i18n="healthyEatingTitle">Alimentaci&oacute;n saludable</h2>
+                <p data-i18n="healthyEatingP1">La alimentación saludable es mucho más que simplemente contar calorías; es una conexión profunda entre lo que consumimos y cómo nos sentimos día a día. En un mundo donde los alimentos procesados y contaminados son cada vez más comunes, es esencial ser conscientes de los contaminantes que se infiltran en nuestra dieta. Desde pesticidas en frutas y verduras hasta residuos químicos en carnes y pescados, estos elementos no solo afectan nuestra salud física, sino también nuestro bienestar mental. Adoptar una alimentación limpia, basada en productos frescos y orgánicos, es un paso fundamental para protegernos de estas toxinas y fortalecer nuestro sistema inmunológico.</p>
 
-                <p>Los micronutrientes, aunque a menudo subestimados, juegan un papel crucial en nuestra salud. Vitaminas, minerales y antioxidantes son los pequeños soldados que mantienen nuestro cuerpo en equilibrio, apoyando desde la función cerebral hasta la regeneración celular. Sin un suministro adecuado de micronutrientes, nuestra energía disminuye, nuestra piel pierde vitalidad y nuestro sistema inmunológico se debilita. Incorporar una variedad de alimentos ricos en micronutrientes, como frutas, verduras, nueces y semillas, nos garantiza una salud robusta y una mente clara.</p>
+                <p data-i18n="healthyEatingP2">Los micronutrientes, aunque a menudo subestimados, jouent un papel crucial en nuestra salud. Vitaminas, minerales y antioxidantes son los pequeños soldados que mantienen nuestro cuerpo en equilibrio, apoyando desde la función cerebral hasta la regeneración celular. Sin un suministro adecuado de micronutrientes, nuestra energía disminuye, nuestra piel pierde vitalidad y nuestro sistema inmunológico se debilita. Incorporar una variedad de alimentos ricos en micronutrientes, como frutas, verduras, nueces y semillas, nos garantiza una salud robusta y una mente clara.</p>
                     
-                <p>El azúcar y las harinas refinadas, presentes en muchos de los alimentos que consumimos a diario, son enemigos silenciosos de nuestra salud. Estos ingredientes no solo contribuyen al aumento de peso, sino que también provocan picos de azúcar en sangre, seguidos de caídas abruptas que nos dejan fatigados y ansiosos. A largo plazo, su consumo excesivo está relacionado con enfermedades crónicas como la diabetes y enfermedades cardíacas. Eliminar o reducir estos alimentos en nuestra dieta y reemplazarlos por alternativas integrales y naturales es esencial para mantener una energía estable y prevenir futuros problemas de salud.</p>
+                <p data-i18n="healthyEatingP3">El azúcar y las harinas refinadas, presentes en muchos de los alimentos que consumimos a diario, son enemigos silenciosos de nuestra salud. Estos ingredientes no solo contribuyen al aumento de peso, sino que también provocan picos de azúcar en sangre, seguidos de caídas abruptas que nos dejan fatigados y ansiosos. A largo plazo, su consumo excesivo está relacionado con enfermedades crónicas como la diabetes y enfermedades cardíacas. Eliminar o reducir estos alimentos en nuestra dieta y reemplazarlos por alternativas integrales y naturales es esencial para mantener una energía estable y prevenir futuros problemas de salud.</p>
                     
-                <p>Sé que la clave para una alimentación saludable está en la simplicidad y la consciencia. Escuchar a nuestro cuerpo, elegir alimentos naturales y frescos, y ser conscientes de lo que ponemos en nuestro plato es la base de una vida sana. No se trata de seguir dietas estrictas o modas pasajeras, sino de cultivar una relación armoniosa con la comida que nos permita disfrutar de cada bocado mientras nutrimos nuestro cuerpo desde dentro.</p>
+                <p data-i18n="healthyEatingP4">Sé que la clave para una alimentación saludable está en la simplicidad y la consciencia. Escuchar a nuestro cuerpo, elegir alimentos naturales y frescos, y ser conscientes de lo que ponemos en nuestro plato es la base de una vida sana. No se trata de seguir dietas estrictas o modas pasajeras, sino de cultivar una relación armoniosa con la comida que nos permita disfrutar de cada bocado mientras nutrimos nuestro cuerpo desde dentro.</p>
                     
-                <p>Finalmente, adoptar una alimentación saludable es un acto de amor propio y respeto hacia nuestro cuerpo. Al reducir los contaminantes, aumentar el consumo de micronutrientes y evitar los azúcares y harinas refinadas, no solo mejoramos nuestra salud física, sino también nuestra claridad mental y bienestar general. Es un proceso continuo de aprendizaje y adaptación, pero cada pequeño cambio que hacemos tiene el poder de transformar nuestra vida de manera significativa y duradera.</p>
+                <p data-i18n="healthyEatingP5">Finalmente, adoptar una alimentación saludable es un acto de amor propio y respeto hacia nuestro cuerpo. Al reducir los contaminantes, aumentar el consumo de micronutrientes y evitar los azúcares y harinas refinadas, no solo mejoramos nuestra salud física, sino también nuestra claridad mental y bienestar general. Es un proceso continuo de aprendizaje y adaptación, pero cada pequeño cambio que hacemos tiene el poder de transformar nuestra vida de manera significativa y duradera.</p>
             </div>
         </div>
     </div>
+    <script src="translations.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
